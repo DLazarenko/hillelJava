@@ -3,6 +3,9 @@ import java.util.Scanner;
 
 import static java.lang.StrictMath.sqrt;
 
+/**
+ * Ввести число, определить простое ли оно.
+ */
 public class SimpleNumber {
 
     public static void main(String[] args) {

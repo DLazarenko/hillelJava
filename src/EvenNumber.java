@@ -1,6 +1,9 @@
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+/**
+ * Ввести число, определить четное или нет.
+ */
 public class EvenNumber {
     public static void main(String[] args) {
 

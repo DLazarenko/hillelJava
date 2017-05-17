@@ -1,6 +1,9 @@
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+/**
+ * Программа, которая находит среднее арифметическое значение двух чисел.
+ */
 public class ArithmeticMean {
     public static void main(String[] args) {
 
