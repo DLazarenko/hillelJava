@@ -1,30 +1,24 @@
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-/**
- * Программа, которая находит среднее арифметическое значение двух чисел.
- */
 public class ArithmeticMean {
+
     public static void main(String[] args) {
-
-        Scanner scanner = new Scanner(System.in);
-        double a;
-        try {
-            a = scanner.nextDouble();
-        } catch (InputMismatchException e) {
-            System.out.println("Your input is not number");
-            return;
-        }
-
-        double b;
-        try {
-            b = scanner.nextDouble();
-        } catch (InputMismatchException e) {
-            System.out.println("Your input is not number");
-            return;
-        }
-
+        double a = readNumber();
+        double b = readNumber();
         double arithmeticMean = (a + b) / 2;
         System.out.println("Result " + arithmeticMean);
+    }
+
+    private static double readNumber() {
+        Scanner scanner = new Scanner(System.in);
+        double number;
+        try {
+            number = scanner.nextDouble();
+            return number;
+        } catch (InputMismatchException e) {
+            System.out.println("Your input is not number");
+            return readNumber();
+        }
     }
 }

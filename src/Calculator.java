@@ -16,7 +16,6 @@ public class Calculator {
 
     public static void main(String[] args) {
 
-
         System.out.println(" Please input first number: ");
         int a = readNumber();
         System.out.println("Your input " + a + " as a first number.");
