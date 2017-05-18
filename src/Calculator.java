@@ -16,33 +16,30 @@ public class Calculator {
 
     public static void main(String[] args) {
 
-        Scanner scanner = new Scanner(System.in);
 
         System.out.println(" Please input first number: ");
-        int a;
-        try {
-            a = scanner.nextInt();
-        } catch (InputMismatchException e) {
-            System.out.println("Your input is not number");
-            return;
-        }
-
+        int a = readNumber();
         System.out.println("Your input " + a + " as a first number.");
-
         System.out.println("Please input second number: ");
-        int b;
-        try {
-            b = scanner.nextInt();
-        } catch (InputMismatchException e) {
-            System.out.println("Your input is not number");
-            return;
-        }
+        int b = readNumber();
         System.out.println("Your input " + b + " as a second number.");
-
         System.out.println("Your");
         System.out.println("Sum is " + (a + b));
         System.out.println("Difference is " + (a - b));
         System.out.println("Multiplication is " + (a * b));
         System.out.println("Division is " + ((double) a / b));
     }
+
+    private static int readNumber() {
+        Scanner scanner = new Scanner(System.in);
+        int a;
+        try {
+            a = scanner.nextInt();
+            return a;
+        } catch (InputMismatchException e) {
+            System.out.println("Your input is not number");
+            return readNumber();
+        }
+    }
+
 }
