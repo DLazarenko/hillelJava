@@ -62,5 +62,4 @@ public class Calculator2 {
             return readMathOperation();
         }
     }
-
 }
