@@ -1,4 +1,3 @@
-import java.util.InputMismatchException;
 import java.util.Scanner;
 
 /**
@@ -7,26 +6,26 @@ import java.util.Scanner;
 public class Kg {
 
     public static void main(String[] args) {
-        int value = readNumber();
-        int g = value % 1000;
-        value = value / 1000;
-        int kg = value % 1000;
-        value = value / 1000;
-        int t = value;
-        System.out.println(t + " t");
-        System.out.println(kg + " kg");
-        System.out.println(g + " g");
-    }
-
-    private static int readNumber() {
-        int value;
-        try {
-            Scanner scanner = new Scanner(System.in);
-            value = scanner.nextInt();
-            return value;
-        } catch (InputMismatchException e) {
-            System.out.println("Incorrect input. Try again.");
+        Scanner scanner = new Scanner(System.in);
+        String number = scanner.next();
+        if (number.contains(".")) {
+            String[] numberSplit = number.split("\\.");
+            int valueInG = Integer.parseInt(numberSplit[0]);
+            int microgram = Integer.parseInt(numberSplit[1]);
+            int gram = valueInG % 1000;
+            valueInG /= 1000;
+            int kg = valueInG % 1000;
+            valueInG /= 1000;
+            int t = valueInG;
+            System.out.println(t + "t " + kg + "kg " + gram + "g " + microgram + "mg ");
+        } else {
+            int valueInG = Integer.parseInt(number);
+            int gram = valueInG % 1000;
+            valueInG /= 1000;
+            int kg = valueInG % 1000;
+            valueInG /= 1000;
+            int t = valueInG;
+            System.out.println(t + "t " + kg + "kg " + gram + "g ");
         }
-        return readNumber();
     }
 }
