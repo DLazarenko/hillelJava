@@ -15,18 +15,22 @@ public class KgMicrogram {
             case "microgram":
                 int microgram = value % 1000;
                 value /= 1000;
-                System.out.print(microgram + " microgram ");
+                if (microgram != 0)
+                    System.out.print(microgram + " microgram ");
             case "gram":
                 int gram = value % 1000;
                 value /= 1000;
-                System.out.print(gram + " gram ");
+                if (gram != 0)
+                    System.out.print(gram + " gram ");
             case "kg":
                 int kg = value % 1000;
                 value /= 1000;
-                System.out.print(kg + " kg ");
+                if (kg != 0)
+                    System.out.print(kg + " kg ");
             case "t":
                 int t = value;
-                System.out.print(t + " t ");
+                if (t != 0)
+                    System.out.print(t + " t ");
         }
     }
 }
