@@ -16,7 +16,7 @@ public class KgMicrogram {
                 int microgram = value % 1000;
                 value /= 1000;
                 if (microgram != 0)
-                    System.out.print(microgram + " microgram");
+                    System.out.print(microgram + " microgram ");
             case "gram":
                 int gram = value % 1000;
                 value /= 1000;
