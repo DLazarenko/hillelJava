@@ -60,7 +60,6 @@ public class StudentsGroup {
         }
         students = newStudents;
 
-
         String surname;
         String group;
         String[] student = new String[2];
