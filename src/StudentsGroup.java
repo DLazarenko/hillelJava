@@ -20,7 +20,7 @@ public class StudentsGroup {
 
     public static void main(String[] args) {
         System.out.println("Chose command.");
-        String readOption = readOption();
+        String readOption = readLine();
         while (!(readOption.equals("exit"))) {
             switch (readOption) {
                 case "add":
@@ -49,7 +49,7 @@ public class StudentsGroup {
                     break;
             }
             System.out.println("Choose command");
-            readOption = readOption();
+            readOption = readLine();
         }
     }
 
@@ -65,16 +65,13 @@ public class StudentsGroup {
         String group;
         String[] student = new String[2];
         System.out.println("Input surname");
-        Scanner scanner = new Scanner(System.in);
-        surname = scanner.next();
-        student[0] = surname;
+        student[0] = readLine();
         System.out.println("Input group");
-        group = scanner.next();
-        student[1] = group;
+        student[1] = readLine();
         students[students.length - 1] = student;
     }
 
-    private static String readOption() {
+    private static String readLine() {
         Scanner scanner = new Scanner(System.in);
         String option = scanner.next();
         return option;
@@ -82,8 +79,7 @@ public class StudentsGroup {
 
     private static void deleteStudents() {
         System.out.println("Input surname.");
-        Scanner scanner = new Scanner(System.in);
-        String surname = scanner.next();
+        String surname = readLine();
         for (int i = 0; i < students.length; i++) {
             if (students[i][0].equals(surname)) {
                 students[i] = null;
@@ -94,8 +90,7 @@ public class StudentsGroup {
 
     private static void containsStudents() {
         System.out.println("Input surname.");
-        Scanner scanner = new Scanner(System.in);
-        String surname = scanner.next();
+        String surname = readLine();
         for (int i = 0; i < students.length - 1; i++) {
             if (students[i][0].equals(surname)) {
                 System.out.println("Yes");
@@ -126,11 +121,9 @@ public class StudentsGroup {
         students = newStudents;
     }
 
-
     private static void uniteStudents() {
         System.out.println("Input name of the new common group");
-        Scanner scanner = new Scanner(System.in);
-        String newCommonGroup = scanner.next();
+        String newCommonGroup = readLine();
         for (int i = 0; i < students.length; i++) {
             students[i][1] = newCommonGroup;
         }
