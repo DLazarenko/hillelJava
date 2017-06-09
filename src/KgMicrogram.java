@@ -10,27 +10,35 @@ public class KgMicrogram {
         String stroka = scanner.next();
         System.out.println("Input weight unit.");
         String weightUnit = scanner.next();
-        int value = Integer.parseInt(stroka);
+        long value = Long.parseLong(stroka);
+        long t = 0;
+        long kg = 0;
+        long gram = 0;
+        long microgram = 0;
         switch (weightUnit) {
             case "microgram":
-                int microgram = value % 1000;
+                microgram = value % 1000;
                 value /= 1000;
-                if (microgram != 0)
-                    System.out.print(microgram + " microgram ");
             case "gram":
-                int gram = value % 1000;
+                gram = value % 1000;
                 value /= 1000;
-                if (gram != 0)
-                    System.out.print(gram + " gram ");
             case "kg":
-                int kg = value % 1000;
+                kg = value % 1000;
                 value /= 1000;
-                if (kg != 0)
-                    System.out.print(kg + " kg ");
             case "t":
-                int t = value;
-                if (t != 0)
-                    System.out.print(t + " t ");
+                t = value;
+        }
+        if (t != 0) {
+            System.out.print(t + " t ");
+        }
+        if (kg != 0) {
+            System.out.print(kg + " kg ");
+        }
+        if (gram != 0) {
+            System.out.print(gram + " gram ");
+        }
+        if (microgram != 0) {
+            System.out.println(microgram + " microgram ");
         }
     }
 }
