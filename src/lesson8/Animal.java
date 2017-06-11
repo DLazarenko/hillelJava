@@ -1,10 +1,10 @@
 package lesson8;
 
-public class Animal {
-    private int id;
-    private int age;
-    private double weight;
-    private String color;
+public abstract class Animal {
+    protected int id;
+    protected int age;
+    protected double weight;
+    protected String color;
 
     Animal(int id, int age, double weight, String color) {
         this.id = id;
@@ -13,7 +13,7 @@ public class Animal {
         this.color = color;
     }
 
-    public String voise() {
-        return "Hello, ";
+    public String voice() {
+        return "Hello";
     }
 }

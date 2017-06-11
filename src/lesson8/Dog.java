@@ -1,13 +1,15 @@
 package lesson8;
 
-public class Dog extends Pet{
+public class Dog extends Pet {
+    private boolean isVaccinated;
 
-    Dog(int id, int age, double weight, String color, String name, boolean isVacctinated) {
-        super(id, age, weight, color, name, isVacctinated);
+    Dog(int id, int age, double weight, String color, String name, boolean isVaccinated) {
+        super(id, age, weight, color, name);
+        this.isVaccinated = isVaccinated;
     }
 
     @Override
-    public String voise(){
-        return super.voise() + "Woof";
+    public String voice() {
+        return super.voice() + " Woof.";
     }
 }
