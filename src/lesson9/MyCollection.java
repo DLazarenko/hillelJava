@@ -109,10 +109,25 @@ public class MyCollection {
         }
     }
 
-    // TO DO
-    // public boolean retainAll(MyCollection collection) {
-    //  return false;
-    // }
+    public boolean retainAll(MyCollection collection) {
+        Object[] newObject = new Object[collection.size()];
+        int count = 0;
+        for (int i = 0; i < collection.size(); i++) {
+            for (int j = 0; j < objects.length; j++) {
+                if (collection.get(i).equals(objects[j])) {
+                    newObject[count] = objects[j];
+                    count++;
+                }
+            }
+        }
+        objects = newObject;
+        trim();
+        if (objects.length <= collection.size()) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 
     public boolean containsAll(MyCollection collection) {
         for (int i = 0; i < collection.size(); i++) {
@@ -133,5 +148,23 @@ public class MyCollection {
 
     public Object get(int index) {
         return objects[index];
+    }
+
+    public void trim() {
+        int countNull = 0;
+        for (int i = 0; i < objects.length; i++) {
+            if (objects[i] == null) {
+                countNull++;
+            }
+        }
+        Object[] newObject = new Object[objects.length - countNull];
+        int index = 0;
+        for (int i = 0; i < objects.length; i++) {
+            if (objects[i] != null) {
+                newObject[index] = objects[i];
+                index++;
+            }
+        }
+        objects = newObject;
     }
 }

@@ -34,7 +34,8 @@ public class MyCollectionMain {
         collection1.add(o51);
         collection1.add(o61);
         collection1.add(o71);
-        //collection.retainAll(collection1);
+        collection.retainAll(collection1);
+        collection.print();
         System.out.println(collection.add(collection1.get(4)));
     }
 }
