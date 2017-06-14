@@ -40,7 +40,7 @@ public class MyCollection {
         for (int i = 0; i < objects.length; i++) {
             newObject[i] = objects[i];
         }
-        newObject[newObject.length - 1] = object;
+        newObject[objects.length] = object;
         objects = newObject;
         return true;
     }
@@ -131,13 +131,12 @@ public class MyCollection {
 
     public boolean containsAll(MyCollection collection) {
         for (int i = 0; i < collection.size(); i++) {
-            for (int j = 0; j < objects.length; j++) {
-                if (!(collection.get(i).equals(objects[j]))) {
-                    return false;
-                }
+            if (!(contains(collection.get(i)))){
+                return false;
             }
         }
         return true;
+
     }
 
     public void print() {
