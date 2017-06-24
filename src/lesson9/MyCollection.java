@@ -54,9 +54,9 @@ public class MyCollection {
             }
         }
         Object[] newObject = new Object[objects.length - 1];
-        for (int i = 0; i < objects.length; i++) {
-            int index = 0;
-            if (objects != null) {
+        int index = 0;
+        for (int i = 0; i < newObject.length; i++) {
+            if (objects[i] != null) {
                 newObject[index] = objects[i];
                 index++;
             }
@@ -131,7 +131,7 @@ public class MyCollection {
 
     public boolean containsAll(MyCollection collection) {
         for (int i = 0; i < collection.size(); i++) {
-            if (!(contains(collection.get(i)))){
+            if (!(contains(collection.get(i)))) {
                 return false;
             }
         }
