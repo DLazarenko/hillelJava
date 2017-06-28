@@ -15,11 +15,7 @@ public class ArrayList implements List {
 
     @Override
     public boolean isEmpty() {
-        if (objects.length == 0) {
-            return true;
-        } else {
-            return false;
-        }
+        return objects.length == 0;
     }
 
     @Override
