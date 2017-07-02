@@ -3,27 +3,28 @@ package lesson11;
 
 public class LinkedListMain {
     public static void main(String[] args) {
-        LinkedList list = new LinkedList();
-        LinkedList j = new LinkedList();
+        LinkedList list1 = new LinkedList();
+        LinkedList list2 = new LinkedList();
 
 
         String a = "gggg";
         String b = "qqqq";
-        list.add(a);
-        list.add(b);
-        list.add("ccc");
-        list.add("eee");
-        list.add("eee1");
+        list1.add(a);
+        list1.add(b);
+        list1.add("ccc");
+        list1.add("eee");
+        list1.add("eee1");
 
 
-        j.add("qqqq");
-        j.add("eee");
-        j.add("eee1");
+        list2.add("qqqq");
+        list2.add("eee");
+        list2.add("eee1");
 
 
-         list.printAll();
+         list1.printAll();
         System.out.println("result");
-        list.remove(2);
-        list.printAll();
+        list1.remove(2);
+        list1.printAll();
+        list1.reversePrint();
     }
 }

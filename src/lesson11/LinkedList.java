@@ -271,4 +271,15 @@ public class LinkedList implements List {
     public List subList(int fromIndex, int toIndex) {
         return null;
     }
+
+    public void reversePrint() {
+        reversePrint(first);
+    }
+
+    private void reversePrint(Item next) {
+        if (next != null) {
+            reversePrint(next.next);
+            System.out.println(next.data);
+        }
+    }
 }
