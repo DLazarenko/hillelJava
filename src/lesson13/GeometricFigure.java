@@ -3,8 +3,8 @@ package lesson13;
 import java.util.Scanner;
 
 abstract class GeometricFigure {
-    SquareFigure squareFigure;
-    Color color;
+    private SquareFigure squareFigure;
+    private Color color;
 
     public GeometricFigure() {
 
@@ -22,6 +22,14 @@ abstract class GeometricFigure {
 
     public void performCalculateWeight() {
 
+    }
+
+    public SquareFigure getSquareFigure() {
+        return squareFigure;
+    }
+
+    public Color getColor() {
+        return color;
     }
 
     public void setSquareFigure(SquareFigure squareFigure) {

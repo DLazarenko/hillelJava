@@ -1,9 +1,10 @@
 package lesson13;
 
 public class BlueColor implements Color {
+
     @Override
     public int consumption() {
-        return 1;
+        return 5;
     }
 
     @Override
@@ -13,6 +14,6 @@ public class BlueColor implements Color {
 
     @Override
     public int price() {
-        return 1;
+        return 120;
     }
 }
