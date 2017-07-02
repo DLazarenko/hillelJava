@@ -1,7 +1,7 @@
 package lesson13;
 
 public class Square extends GeometricFigure {
-
-    public Square() {
+    public Square(int side) {
+        super(side);
     }
 }

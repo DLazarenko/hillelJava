@@ -5,23 +5,25 @@ import java.util.Scanner;
 abstract class GeometricFigure {
     private SquareFigure squareFigure;
     private Color color;
+    int side;
 
-    public GeometricFigure() {
-
+    public GeometricFigure(int side) {
+        this.side = side;
     }
 
-    public void performFindSquare() {
-        Scanner scanner = new Scanner(System.in);
-        int x = Integer.parseInt(scanner.next());
-        squareFigure.findSquare(x);
+    public double performFindSquare() {
+        double s = squareFigure.findSquare(side);
+        return s;
     }
 
     public void performCalculatePrice() {
-
+        double price = performFindSquare() * getColor().consumption() * getColor().price();
+        System.out.println(price);
     }
 
     public void performCalculateWeight() {
-
+        double weight = performFindSquare() * getColor().consumption();
+        System.out.println(weight);
     }
 
     public SquareFigure getSquareFigure() {
