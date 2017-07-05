@@ -33,6 +33,39 @@ public class GameLogic {
         } else if (field[4] == 1 && field[8] == 1 && field[0] == 0) {
             field[0] = PLACED_BY_AI;
             return 0;
+        } else if (field[1] == 1 && field[2] == 1 && field[0] == 0) {
+            field[0] = PLACED_BY_AI;
+            return 0;
+        } else if (field[0] == 1 && field[1] == 1 && field[2] == 0) {
+            field[2] = PLACED_BY_AI;
+            return 2;
+        } else if (field[0] == 1 && field[3] == 1 && field[6] == 0) {
+            field[6] = PLACED_BY_AI;
+            return 6;
+        } else if (field[2] == 1 && field[5] == 1 && field[8] == 0) {
+            field[8] = PLACED_BY_AI;
+            return 8;
+        } else if (field[6] == 1 && field[7] == 1 && field[8] == 0) {
+            field[8] = PLACED_BY_AI;
+            return 8;
+        } else if (field[7] == 1 && field[8] == 1 && field[6] == 0) {
+            field[6] = PLACED_BY_AI;
+            return 6;
+        } else if (field[4] == 1 && field[1] == 1 && field[7] == 0) {
+            field[7] = PLACED_BY_AI;
+            return 7;
+        } else if (field[4] == 1 && field[7] == 1 && field[1] == 0) {
+            field[1] = PLACED_BY_AI;
+            return 1;
+        } else if (field[3] == 1 && field[6] == 1 && field[0] == 0) {
+            field[0] = PLACED_BY_AI;
+            return 0;
+        } else if (field[4] == 1 && field[5] == 1 && field[3] == 0) {
+            field[3] = PLACED_BY_AI;
+            return 3;
+        } else if (field[3] == 1 && field[4] == 1 && field[5] == 0) {
+            field[5] = PLACED_BY_AI;
+            return 5;
         } else {
             int aiPosition = aiGameStrategy.aiMakeTurn(field);
             field[aiPosition] = PLACED_BY_AI;
