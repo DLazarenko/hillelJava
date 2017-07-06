@@ -66,6 +66,18 @@ public class GameLogic {
         } else if (field[3] == 1 && field[4] == 1 && field[5] == 0) {
             field[5] = PLACED_BY_AI;
             return 5;
+        } else if (field[0] == 1 && field[2] == 1 && field[1] == 0) {
+            field[1] = PLACED_BY_AI;
+            return 1;
+        } else if (field[2] == 1 && field[8] == 1 && field[5] == 0) {
+            field[5] = PLACED_BY_AI;
+            return 5;
+        } else if (field[0] == 1 && field[6] == 1 && field[3] == 0) {
+            field[3] = PLACED_BY_AI;
+            return 3;
+        } else if (field[6] == 1 && field[8] == 1 && field[7] == 0) {
+            field[7] = PLACED_BY_AI;
+            return 7;
         } else {
             int aiPosition = aiGameStrategy.aiMakeTurn(field);
             field[aiPosition] = PLACED_BY_AI;

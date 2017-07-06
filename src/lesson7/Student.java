@@ -1,6 +1,6 @@
 package lesson7;
 
-public class Student {
+public class Student implements Comparable<Student> {
     private String name;
     private String surname;
     private int[] marks;
@@ -44,5 +44,10 @@ public class Student {
             }
         }
         return string;
+    }
+
+    @Override
+    public int compareTo(Student o) {
+        return 0;
     }
 }
