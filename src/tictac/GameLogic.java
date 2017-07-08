@@ -21,7 +21,7 @@ public class GameLogic {
             field[4] = PLACED_BY_AI;
             return 4;
         }
-        if (field[4] == 1 && field[0] == 1 && field[8] == 0) {
+        else if (field[4] == 1 && field[0] == 1 && field[8] == 0) {
             field[8] = PLACED_BY_AI;
             return 8;
         } else if (field[4] == 1 && field[2] == 1 && field[6] == 0) {
