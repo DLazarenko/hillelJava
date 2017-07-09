@@ -1,33 +1,27 @@
 package lesson15;
 
 public class Map {
-    Entry[] list = new Entry[0];
+    private final int CONST = 16;
+    private final Entry[] list;
+
+    public Map() {
+        list = new Entry[CONST];
+    }
 
     public void put(Object key, Object value) {
-        if (list.length != 0) {
-            for (int i = 0; i < list.length; i++) {
-                if (list[i].getKey().equals(key)) {
-                    list[i].setValue(value);
-                }
-            }
-        } else {
-            Entry[] newList = new Entry[list.length + 1];
-            for (int k = 0; k < list.length; k++) {
-                newList[k] = list[k];
-            }
-            Entry entry = new Entry();
-            entry.setKey(key);
-            entry.setValue(value);
-            newList[list.length] = entry;
-            list = newList;
-        }
+
+        int objectHashCode = Math.abs(key.hashCode());
+        objectHashCode = objectHashCode % CONST;
+
+        Entry entry = new Entry(key, value);
+        list[objectHashCode] = entry;
     }
 
     public Object get(Object key) {
-        for (int i = 0; i < list.length; i++) {
-            if (list[i].getKey().equals(key)) {
-                return list[i].getValue();
-            }
+        int keyHashCode = Math.abs(key.hashCode());
+        keyHashCode = keyHashCode % CONST;
+        if (list[keyHashCode].getKey().equals(key)) {
+            return list[keyHashCode].getValue();
         }
         return null;
     }

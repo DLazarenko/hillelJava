@@ -9,6 +9,6 @@ public class Main {
         map.put("yyyy", "12");
         map.put("ivanov", "vlad");
         System.out.println(map);
-        System.out.println(map.get("ivanov"));
+        System.out.println(map.get("yyyy"));
     }
 }
