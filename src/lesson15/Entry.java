@@ -8,12 +8,12 @@ public class Entry {
         this.key = key;
         this.value = value;
     }
+
     public Object getKey() {
         return key;
     }
+
     public Object getValue() {
         return value;
     }
-
-
 }
