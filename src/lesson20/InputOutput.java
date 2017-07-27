@@ -3,6 +3,7 @@ package lesson20;
 import java.io.*;
 
 public class InputOutput {
+
     public static void main(String[] args) throws IOException {
         String firstFileName = "/Users/admin/IdeaProjects/hillelJava/src/lesson20/FirstFile";
         String secondFileName = "/Users/admin/IdeaProjects/hillelJava/src/lesson20/SecondFile";
