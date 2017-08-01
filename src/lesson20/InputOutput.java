@@ -9,17 +9,17 @@ public class InputOutput {
         String secondFileName = "/Users/admin/IdeaProjects/hillelJava/src/lesson20/SecondFile";
         InputStream inputStream = new BufferedInputStream(new FileInputStream(firstFileName));
         OutputStream outputStream = new FileOutputStream(secondFileName);
-        int data = inputStream.read();
-        outputStream.write(data);
         long start = System.currentTimeMillis();
-        while (data != -1) {
-
+        int data;
+        do {
             data = inputStream.read();
-            outputStream.write(data);
+            if (data != -1) {
+                outputStream.write(data);
+            }
             System.out.println(data);
-        }
-        System.out.println(System.currentTimeMillis() - start + " milliseconds time");
+        } while (data != -1);
         inputStream.close();
         outputStream.close();
+        System.out.println(System.currentTimeMillis() - start + " milliseconds time");
     }
 }
